@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Liste des Livres</title>
+</head>
+<body>
+    <h1>Liste des Livres</h1>
+    <a href="{% url 'ajout' %}">Ajouter un nouveau Livre</a>
+    <ul>
+        {% for livre in livres %}
+            <li>
+                <strong>{{ livre.titre }}</strong> par {{ livre.auteur }} ({{ livre.date_parution }})
+                <br>Résumé : {{ livre.resume }}
+                <br>Nombre de pages : {{ livre.nombre_pages }}
+                 <a href="{% url 'detail' livre.id %}">Voir les détails</a>
+                <a href="{% url 'update' livre.id %}">Modifier</a>
+                <a href="{% url 'delete' livre.id %}" onclick="return confirm('Êtes-vous sûr ?');">Supprimer</a>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
+
+
+

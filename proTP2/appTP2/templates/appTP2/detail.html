@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Détails du Livre</title>
+</head>
+<body>
+    <h1>Détails du Livre</h1>
+    <p><strong>Titre :</strong> {{ livre.titre }}</p>
+    <p><strong>Auteur :</strong> {{ livre.auteur }}</p>
+    <p><strong>Date de parution :</strong> {{ livre.date_parution }}</p>
+    <p><strong>Nombre de pages :</strong> {{ livre.nombre_pages }}</p>
+    <p><strong>Résumé :</strong> {{ livre.resume }}</p>
+    <br>
+    <a href="{% url 'liste' %}">Retour à la liste</a> <!-- Lien vers la liste -->
+</body>
+</html>
